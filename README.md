@@ -79,13 +79,7 @@ latlong2
 </manifest>
 Não há integração com biometria. O login é feito apenas por email e senha corporativo.
 
-Após configuração, rode o app:
+- Após configuração, rode o app: flutter run
 
-arduino
-Copiar código
-flutter run
-Observações finais
-O projeto cumpre o requisito da avaliação, registrando ponto apenas quando estou próximo do local de trabalho e garantindo autenticação segura via Firebase.
-A interface é simples e intuitiva, permitindo fácil registro e visualização do ponto.
 
 
