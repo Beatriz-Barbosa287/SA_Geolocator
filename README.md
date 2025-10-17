@@ -13,7 +13,7 @@ A principal funcionalidade implementada foi:
 ### Decisão de design:
 - Optei por não implementar biometria devido à complexidade e tempo disponível.
 - O app é responsivo e organizado para facilitar o uso do funcionário.
-- O desenvolvimento foi feito **apenas para Android**, pois estou acostumado a trabalhar nesta plataforma.
+- O desenvolvimento foi feito **apenas para Android**, pois estou acostumada a trabalhar nesta plataforma.
 
 ## Especificação do uso de API externa e integração com Firebase
 O aplicativo utiliza as seguintes bibliotecas externas:
@@ -29,8 +29,8 @@ Integração com Firebase:
 - Firestore para armazenar registro de ponto com campos: `id`, `dataHora`, `latitude`, `longitude`.
 
 ## Explicação do desafio encontrado e como foi resolvido
-- **Validação de localização**: garantir que o registro só seja feito dentro de 100 metros. Resolvi usando Geolocator e calculando a distância entre o ponto do usuário e o ponto fixo da empresa (Ponto fixo utilizado foi a latitude e longitude do próprio SENAI limeira).
-- **Autenticação corporativa**: limitei o login apenas para email com domínio específico (@cargo.connect.com), usando validação simples antes de chamar o Firebase Auth.
+- **Validação de localização**: garantir que o registro só seja feito dentro de 100 metros. Resolvi usando Geolocator e calculando a distância entre o ponto do usuário e o ponto fixo da empresa (Ponto fixo utilizado foi a latitude e longitude do próprio SENAI Limeira).
+- **Autenticação corporativa**: limitei o login apenas para email com domínio específico (@cargo.connect.com), usando validação simples antes de chamar o Firebase Auth, desse modo o Cadastro também nãe permite novos usuários fora deste domínio específico.
 
 # Desafios enfrentados:
 - Permissão de geolocalização: foi necessário pesquisar como configurar corretamente o AndroidManifest.xml para que o app pudesse acessar a minha localização, o que levou algum tempo para entender a documentação do Flutter e do Geolocator.
@@ -48,7 +48,6 @@ Integração com Firebase:
 flutter clean
 flutter pub get
 flutter run
-
 
 4. O app será executado no emulador ou dispositivo Android conectado.
 
