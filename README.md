@@ -29,13 +29,13 @@ Integração com Firebase:
 - Firestore para armazenar registro de ponto com campos: `id`, `dataHora`, `latitude`, `longitude`.
 
 ## Explicação do desafio encontrado e como foi resolvido
-- **Validação de localização**: garantir que o registro só seja feito dentro de 100 metros. Resolvi usando Geolocator e calculando a distância entre o ponto do usuário e o ponto fixo da empresa.
+- **Validação de localização**: garantir que o registro só seja feito dentro de 100 metros. Resolvi usando Geolocator e calculando a distância entre o ponto do usuário e o ponto fixo da empresa (Ponto fixo utilizado foi a latitude e longitude do próprio SENAI limeira).
 - **Autenticação corporativa**: limitei o login apenas para email com domínio específico (@cargo.connect.com), usando validação simples antes de chamar o Firebase Auth.
 
 # Desafios enfrentados:
 - Permissão de geolocalização: foi necessário pesquisar como configurar corretamente o AndroidManifest.xml para que o app pudesse acessar a minha localização, o que levou algum tempo para entender a documentação do Flutter e do Geolocator.
 
-Lógica de autenticação: desenvolver o AuthController para validar apenas email corporativo (@cargo.connect.com) e integrar corretamente com Firebase Auth percebi algumas dificuldades minhas na lógica de verificação e tratamento de erro, exigindo testes e ajustes.
+- Lógica de autenticação: desenvolver o AuthController para validar apenas email corporativo (@cargo.connect.com) e integrar corretamente com Firebase Auth percebi algumas dificuldades minhas na lógica de verificação e tratamento de erro, exigindo testes e ajustes.
 
 
 
