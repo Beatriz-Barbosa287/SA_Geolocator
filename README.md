@@ -11,7 +11,7 @@ A principal funcionalidade implementada foi:
 - Gerenciamento de estado com **Provider** para manter os dados do usuário durante a sessão.
 - Formatação de data e hora utilizando **intl** para exibir o registro de forma amigável.
 
-Decisão de design:
+### Decisão de design:
 - Optei por não implementar biometria devido à complexidade e tempo disponível.
 - O app é responsivo e organizado para facilitar o uso do funcionário.
 - O desenvolvimento foi feito **apenas para Android**, pois estou acostumado a trabalhar nesta plataforma.
@@ -24,7 +24,6 @@ O aplicativo utiliza as seguintes bibliotecas externas:
 - **cloud_firestore**: armazenamento de registro de ponto.
 - **geolocator**: captura da localização do usuário e cálculo de distância.
 - **flutter_map + latlong2**: mapa para exibição da localização (opcional).
-- **provider**: gerenciamento de estado.
 - **intl**: formatação de data e hora.
 
 Integração com Firebase:
@@ -34,6 +33,13 @@ Integração com Firebase:
 ## Explicação do desafio encontrado e como foi resolvido
 - **Validação de localização**: garantir que o registro só seja feito dentro de 100 metros. Resolvi usando Geolocator e calculando a distância entre o ponto do usuário e o ponto fixo da empresa.
 - **Autenticação corporativa**: limitei o login apenas para email com domínio específico (@cargo.connect.com), usando validação simples antes de chamar o Firebase Auth.
+
+# Desafios enfrentados:
+- Permissão de geolocalização: foi necessário pesquisar como configurar corretamente o AndroidManifest.xml para que o app pudesse acessar a minha localização, o que levou algum tempo para entender a documentação do Flutter e do Geolocator.
+
+Lógica de autenticação: desenvolver o AuthController para validar apenas email corporativo (@cargo.connect.com) e integrar corretamente com Firebase Auth percebi algumas dificuldades minhas na lógica de verificação e tratamento de erro, exigindo testes e ajustes.
+
+
 
 # Documentação de Instalação e Uso
 
@@ -89,11 +95,5 @@ flutter run
 Observações finais
 O projeto cumpre o requisito da avaliação, registrando ponto apenas quando estou próximo do local de trabalho e garantindo autenticação segura via Firebase.
 A interface é simples e intuitiva, permitindo fácil registro e visualização do ponto.
-
-
-# Considerações Finais - Desafios enfrentados:
-- Permissão de geolocalização: foi necessário pesquisar como configurar corretamente o AndroidManifest.xml para que o app pudesse acessar a minha localização, o que levou algum tempo para entender a documentação do Flutter e do Geolocator.
-
-Lógica de autenticação: desenvolver o AuthController para validar apenas email corporativo (@cargo.connect.com) e integrar corretamente com Firebase Auth percebi algumas dificuldades minhas na lógica de verificação e tratamento de erro, exigindo testes e ajustes.
 
 
