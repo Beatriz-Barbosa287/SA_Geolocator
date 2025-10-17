@@ -71,7 +71,7 @@ flutter_map
 latlong2
 
 
-4. Para geolocalização, adicione permissão no **AndroidManifest.xml**:
+4. Para geolocalização, se não estiver, adicione permissão no **AndroidManifest.xml**:
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
