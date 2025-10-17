@@ -12,7 +12,7 @@ A principal funcionalidade implementada foi:
 
 ### Decisão de design:
 - Optei por não implementar biometria devido à complexidade e tempo disponível.
-- O app é responsivo e organizado para facilitar o uso do funcionário.
+- O app é limpo (design clean/simples) e organizado para facilitar o uso do funcionário.
 - O desenvolvimento foi feito **apenas para Android**, pois estou acostumada a trabalhar nesta plataforma.
 
 ## Especificação do uso de API externa e integração com Firebase
@@ -64,11 +64,7 @@ firebase_core
 firebase_auth
 cloud_firestore
 geolocator
-provider
 intl
-flutter_map
-latlong2
-
 
 4. Para geolocalização, se não estiver, adicione permissão no **AndroidManifest.xml**:
 ```xml
