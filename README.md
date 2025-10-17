@@ -8,7 +8,6 @@ A principal funcionalidade implementada foi:
 - Registro de ponto com **data, hora e localização** do funcionário.
 - Verificação de distância máxima de 100 metros do local de trabalho usando **geolocalização**.
 - Interface simples e clara, com telas de login, registro de ponto e visualização do registro.
-- Gerenciamento de estado com **Provider** para manter os dados do usuário durante a sessão.
 - Formatação de data e hora utilizando **intl** para exibir o registro de forma amigável.
 
 ### Decisão de design:
@@ -23,12 +22,11 @@ O aplicativo utiliza as seguintes bibliotecas externas:
 - **firebase_auth**: autenticação de usuário.
 - **cloud_firestore**: armazenamento de registro de ponto.
 - **geolocator**: captura da localização do usuário e cálculo de distância.
-- **flutter_map + latlong2**: mapa para exibição da localização (opcional).
 - **intl**: formatação de data e hora.
 
 Integração com Firebase:
 - Firebase Authentication para criar e gerenciar usuário.
-- Firestore para armazenar registro de ponto com campos: `uid`, `dataHora`, `latitude`, `longitude`.
+- Firestore para armazenar registro de ponto com campos: `id`, `dataHora`, `latitude`, `longitude`.
 
 ## Explicação do desafio encontrado e como foi resolvido
 - **Validação de localização**: garantir que o registro só seja feito dentro de 100 metros. Resolvi usando Geolocator e calculando a distância entre o ponto do usuário e o ponto fixo da empresa.
@@ -51,21 +49,17 @@ flutter clean
 flutter pub get
 flutter run
 
-yaml
-Copiar código
+
 4. O app será executado no emulador ou dispositivo Android conectado.
 
 ## Instruções para configurar Firebase e API utilizada
 1. Ative o Firebase CLI:
 dart pub global activate flutterfire_cli
 
-markdown
-Copiar código
+
 2. Configure o Firebase para o projeto:
 flutterfire configure
 
-javascript
-Copiar código
 3. Adicione as seguintes dependências no `pubspec.yaml`:
 firebase_core
 firebase_auth
@@ -76,14 +70,12 @@ intl
 flutter_map
 latlong2
 
-pgsql
-Copiar código
+
 4. Para geolocalização, adicione permissão no **AndroidManifest.xml**:
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
 </manifest>
 Não há integração com biometria. O login é feito apenas por email e senha corporativo.
 
