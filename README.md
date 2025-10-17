@@ -77,9 +77,11 @@ latlong2
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 </manifest>
-Não há integração com biometria. O login é feito apenas por email e senha corporativo.
+
 
 - Após configuração, rode o app: flutter run
+
+** Não há integração com biometria. O login é feito apenas por email e senha corporativo.
 
 
 
